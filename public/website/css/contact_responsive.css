@@ -1,0 +1,49 @@
+@charset "utf-8";
+@media only screen and (max-width: 991px)
+{
+	.contact_form_container
+	{
+		position: relative;
+		margin-top: 80px;
+		width: 100%;
+		right: auto;
+		bottom: auto;
+	}
+}
+
+@media only screen and (max-width: 767px)
+{
+	.contact_map
+	{
+		padding-top: 81px;
+	}
+}
+
+
+@media only screen and (max-width: 575px)
+{
+	.contact_map
+	{
+		padding-top: 71px;
+	}
+	.google_map
+	{
+		height: 300px;
+	}
+	.contact_details ul
+	{
+		-webkit-columns: 1;
+	  	-moz-columns: 1;
+		columns: 1;
+	}
+	.contact_form_container
+	{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.form_button
+	{
+		font-size: 10px;
+	}
+}
+

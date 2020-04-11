@@ -1,0 +1,105 @@
+
+
+.home{
+    position: relative;
+}
+
+.home .custom-overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.568);
+}
+
+.home .home_content{
+    z-index: 99;
+}
+
+.guidline p{
+    font-size: 16px;
+    line-height: 1.8rem;
+}
+
+/* Auth */
+.auth{
+    width: 100%;
+    height: 100vh;
+}
+
+.auth .card .form-control:focus{
+    box-shadow: none;
+}
+
+/* Account */
+.account-index .btn{
+    padding-left: 80px;
+    padding-right: 80px;
+    background-color: #2e21df;
+    border: 0;
+}
+
+.account-index .form-control{
+    height: 40px!important;
+}
+
+.account-index .form-control:focus{
+    box-shadow: none;
+}
+
+.select2-container--default .select2-selection--single{
+    padding:6px;
+    height: 40px!important;
+    width: 100%!important;
+    position: relative;
+    border-radius: 0px!important;
+    border: 1px solid #dfdfdf !important;
+}
+
+    
+
+
+@media(max-width: 576px){
+    .auth .card{
+        width: 93vw;
+    }
+}
+
+@media(min-width: 576px){
+    .auth .card{
+        width: 600px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flex-center {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .flex-column {
+    -ms-flex-direction: column !important;
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    flex-direction: column !important;
+  }
