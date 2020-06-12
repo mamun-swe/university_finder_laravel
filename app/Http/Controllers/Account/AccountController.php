@@ -15,7 +15,17 @@ class AccountController extends Controller
 
 
     public function updateAccount(Request $request){
-        dd($request->all());
+        $rules = [
+            'std_gender' => 'required',
+            'std_blood_grp' => 'required',
+            'std_birth_date' => 'required',
+            'std_country' => 'required',
+            'std_city' => 'required',
+            'std_state' => 'required',
+            'std_contact' => 'required',
+            'std_language' => 'required'
+        ];
+        $this->validate($request,$rules);
 
     }
 }

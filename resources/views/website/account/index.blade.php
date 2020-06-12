@@ -7,14 +7,14 @@
         <div class="row mt-lg-5">
             <div class="col-12 text-center mb-4 mb-lg-5">
                 <h3>Welcome {{Auth()->User()->name}}</h3>
-                @if($userProfile)
-                <p>Update your profile with your information .</p>
+                @if(!$userProfile)
+                    <p>Update your profile with your information .</p>
                 @else
-                <p>100 universities are mathcing with your profile .</p>
-            @endif
+                    <p>100 universities are mathcing with your profile .</p>
+                @endif
             </div>
 
-            @if($userProfile)
+            @if(!$userProfile)
 
 
             <div class="col-12">
@@ -31,14 +31,18 @@
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
                                 <small>Name</small>
-                                <input type="text" name="std_name" class="form-control rounded-0 shadow-none" placeholder="Enter name" value="{{Auth()->User()->name}}" readonly>
+                                <input type="text" class="form-control rounded-0 shadow-none" placeholder="Enter name" value="{{Auth()->User()->name}}" readonly>
                             </div>
                         </div>
 
                         <!-- Gender -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Gender</small>
+                                @if($errors->has('std_gender'))
+                                    <small class="text-danger">Gender is required.</small>
+                                @else 
+                                    <small>Gender</small>
+                                @endif
                                 <select name="std_gender" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Gender</option>
                                     <option value="male">Male</option>
@@ -51,7 +55,12 @@
                         <!-- Blood Group -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Blood Group</small>
+                                @if($errors->has('std_blood_grp'))
+                                    <small class="text-danger">Blood group is required.</small>
+                                @else 
+                                    <small>Blood Group</small>
+                                @endif
+                                
                                 <select name="std_blood_grp" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select blood group</option>
                                     <option value="a+">(A+)</option>
@@ -69,7 +78,12 @@
                         <!-- DOB -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Date of birth</small>
+                                @if($errors->has('std_birth_date'))
+                                    <small class="text-danger">Date of birth is required.</small>
+                                @else 
+                                    <small>Date of birth</small>
+                                @endif
+                                
                                 <input type="date" name="std_birth_date" class="form-control rounded-0 shadow-none">
                             </div>
                         </div>
@@ -83,7 +97,12 @@
                         <!-- Country -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Country</small>
+                                @if($errors->has('std_country'))
+                                    <small class="text-danger">Country is required.</small>
+                                @else 
+                                    <small>Country</small>
+                                @endif
+                                
                                 <select name="std_country" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Country</option>
                                     <option value="bd">Bangladesh</option>
@@ -96,7 +115,12 @@
                          <!-- City -->
                          <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>City</small>
+                                @if($errors->has('std_city'))
+                                    <small class="text-danger">City is required.</small>
+                                @else 
+                                    <small>City</small>
+                                @endif
+                                
                                 <input type="text" name="std_city" class="form-control rounded-0 shadow-none" placeholder="Enter your city">
                             </div>
                         </div>
@@ -104,7 +128,12 @@
                         <!-- State -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>State</small>
+                                @if($errors->has('std_state'))
+                                    <small class="text-danger">State is required.</small>
+                                @else 
+                                    <small>State</small>
+                                @endif
+                                
                                 <input type="text" name="std_state" class="form-control rounded-0 shadow-none" placeholder="Enter your state">
                             </div>
                         </div>
@@ -112,7 +141,11 @@
                         <!-- Conatct -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Conatct</small>
+                                @if($errors->has('std_contact'))
+                                    <small class="text-danger">Contact is required.</small>
+                                @else 
+                                    <small>Contact</small>
+                                @endif
                                 <input type="number" name="std_contact" class="form-control rounded-0 shadow-none" placeholder="Enter your contact number">
                             </div>
                         </div>
@@ -126,7 +159,12 @@
 
                         <div class="col-12">
                             <div class="form-group mb-4">
-                                <small>Select Language</small>
+                                @if($errors->has('std_language'))
+                                    <small class="text-danger">Select language .</small>
+                                @else 
+                                    <small>Select Language</small>
+                                @endif
+                                
                                 <select id="std_language" name="std_language" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Language</option>
                                     <option value="ielts">IELTS</option>
