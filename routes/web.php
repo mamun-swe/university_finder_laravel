@@ -3,9 +3,19 @@
 use Illuminate\Support\Facades\Route;
 
 
+// Auth Controllers
+Route::get('/register', 'AuthController@registerView')->name('register');
+Route::post('/register', 'AuthController@registration')->name('register');
+
+Route::get('/login', 'AuthController@loginView')->name('login');
+Route::post('/login', 'AuthController@login')->name('login');
+Route::post('/logout', 'AuthController@logout')->name('logout');
+
+
 
 Route::get('/home', 'HomeController@index')->name('home')->middleware(['auth', 'Admin']);
 Route::resource('/country', 'Admin\CountryController')->middleware(['auth', 'Admin']);
+
 
 // University Routes
 Route::get('/university', 'Admin\UniversityController@create')->name('university.create')->middleware(['auth', 'Admin']);
@@ -27,4 +37,4 @@ Route::get('/account', 'AccountController@account')->name('account.index')->midd
 
 
 
-Auth::routes();
+// Auth::routes();
