@@ -1,10 +1,8 @@
-
-
-.home{
+.home {
     position: relative;
 }
 
-.home .custom-overlay{
+.home .custom-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -13,76 +11,76 @@
     background: rgba(255, 255, 255, 0.568);
 }
 
-.home .home_content{
+.home .home_content {
     z-index: 99;
 }
 
-.guidline p{
+.guidline p {
     font-size: 16px;
     line-height: 1.8rem;
 }
 
 /* Auth */
-.auth{
+
+.auth {
     width: 100%;
     height: 100vh;
 }
 
-.auth .card .form-control:focus{
+.auth .card .form-control:focus {
     box-shadow: none;
 }
 
 /* Account */
-.account-index .btn{
+
+.account-index .btn {
     padding-left: 80px;
     padding-right: 80px;
     background-color: #2e21df;
     border: 0;
 }
 
-.account-index .form-control{
+.account-index small {
+    color: #000;
+}
+
+.account-index .form-control {
     height: 40px!important;
+    border: 0;
+    border-bottom: 1px solid #dfdfdf;
+    padding-left: 8px;
+    font-size: 14px;
+    background-color: #e9ecef;
 }
 
-.account-index .form-control:focus{
+.account-index .form-control:focus {
     box-shadow: none;
+    border-bottom: 1px solid #2e21df;
 }
 
-.select2-container--default .select2-selection--single{
-    padding:6px;
+.select2-container--default .select2-selection--single {
+    padding: 6px;
     height: 40px!important;
     width: 100%!important;
     position: relative;
     border-radius: 0px!important;
-    border: 1px solid #dfdfdf !important;
+    border: 0 !important;
+    padding-left: 0px !important;
+    border-bottom: 1px solid #dfdfdf !important;
+    background-color: #e9ecef !important;
 }
 
-    
-
-
-@media(max-width: 576px){
-    .auth .card{
+@media(max-width: 576px) {
+    .auth .card {
         width: 93vw;
     }
 }
 
-@media(min-width: 576px){
-    .auth .card{
+@media(min-width: 576px) {
+    .auth .card {
         width: 600px;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .flex-center {
     display: -webkit-box;
@@ -95,11 +93,51 @@
     -ms-flex-align: center;
     align-items: center;
     height: 100%;
-  }
-  
-  .flex-column {
+}
+
+.flex-column {
     -ms-flex-direction: column !important;
     -webkit-box-orient: vertical !important;
     -webkit-box-direction: normal !important;
     flex-direction: column !important;
-  }
+}
+
+.logo_img img {
+    height: 80px;
+}
+
+.header_container {
+    border-bottom: 1px solid #dfdfdf54;
+}
+
+.account-index .accordion .card {
+    border-radius: 0;
+    border: 0;
+}
+
+.account-index .accordion .card .card-header {
+    padding: 0px;
+    border: 0;
+    border-bottom: 1px solid #2e21df42;
+}
+
+.account-index .accordion .card .btn {
+    display: block !important;
+    width: 100%;
+    color: #000;
+    background: none;
+    text-align: left;
+    padding: 20px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.account-index .accordion .card .btn h5 {
+    margin-bottom: 0;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.account-index .accordion .card .card-body p {
+    margin-bottom: 0;
+}

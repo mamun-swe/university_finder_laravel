@@ -71,14 +71,16 @@
             </div>
     
             <!-- Header Content -->
-            <div class="header_container">
+            <div class="header_container pb-2 ">
                 <div class="container">
                     <div class="row">
                         <div class="col">
                             <div class="header_content d-flex flex-row align-items-center justify-content-start">
                                 <div class="logo_container mr-auto">
                                     <a href="{{route('website.home')}}">
-                                        <div class="logo_text">Lingua</div>
+                                        <div class="logo_img">
+                                            <img src="{{asset('static/logo.png')}}" alt="">
+                                        </div>
                                     </a>
                                 </div>
                                 <nav class="main_nav_contaner">
