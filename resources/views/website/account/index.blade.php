@@ -18,7 +18,7 @@
 
 
             <div class="col-12">
-                <form action="{{route('account.update')}}" method="post">
+                <form id="submit_form">
                     @csrf
 
                     <div class="row">
@@ -43,7 +43,7 @@
                                 @else 
                                     <small>Gender</small>
                                 @endif
-                                <select name="std_gender" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
+                                <select name="std_gender" id="std_gender" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Gender</option>
                                     <option value="male">Male</option>
                                     <option value="female">Female</option>
@@ -61,7 +61,7 @@
                                     <small>Blood Group</small>
                                 @endif
                                 
-                                <select name="std_blood_grp" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
+                                <select name="std_blood_grp" id="std_blood_grp" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select blood group</option>
                                     <option value="a+">(A+)</option>
                                     <option value="a-">(A-)</option>
@@ -443,6 +443,18 @@ $('#std_language').change(function(){
         $('.ielts_score_row').hide() 
         $('.other_score').show()
     }
+})
+
+// Form Submission
+$("#submit_form").submit(function(event){
+    event.preventDefault()
+
+    var data = {
+        std_gender: $("#std_gender").val(),
+        std_blood_grp: $("#std_blood_grp").val(),
+    }
+
+    console.log(data)
 })
 </script>
 @endsection
