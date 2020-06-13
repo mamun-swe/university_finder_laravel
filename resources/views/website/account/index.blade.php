@@ -105,8 +105,9 @@
                                 
                                 <select name="std_country" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Country</option>
-                                    <option value="bd">Bangladesh</option>
-                                    <option value="india">India</option>
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->country_name}}">{{$country->country_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
@@ -244,8 +245,9 @@
                                 <small>Country</small>
                                 <select name="std_edu_country" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Country</option>
-                                    <option value="bd">Bangladesh</option>
-                                    <option value="india">India</option>
+                                    @foreach($countries as $country)
+                                        <option value="{{$country->country_name}}">{{$country->country_name}}</option>
+                                    @endforeach
                                 </select>
                             </div>
                         </div>
