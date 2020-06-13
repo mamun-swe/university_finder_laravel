@@ -15,12 +15,16 @@ class UserProfile extends Model
         'std_city',
         'std_state',
         'std_contact',
+
         'std_language',
+
+        'std_total_ielts_lng_score',
+        'std_ielts_listening_score',
+        'std_ielts_speaking_score',
+        'std_ielts_writing_score',
+        'std_ielts_reading_score',
         'std_total_lng_score',
-        'std_listening_score',
-        'std_speaking_score',
-        'std_writing_score',
-        'std_reading_score',
+
         'std_edu_country',
         'std_edu_intitution_name',
         'std_edu_degree_name',

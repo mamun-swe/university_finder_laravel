@@ -141,3 +141,7 @@
 .account-index .accordion .card .card-body p {
     margin-bottom: 0;
 }
+
+.danger{
+    color: brown;
+}

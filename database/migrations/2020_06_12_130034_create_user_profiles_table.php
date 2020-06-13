@@ -24,11 +24,14 @@ class CreateUserProfilesTable extends Migration
             $table->string('std_state');
             $table->string('std_contact');
             $table->string('std_language');
-            $table->string('std_total_lng_score');
-            $table->string('std_listening_score');
-            $table->string('std_speaking_score');
-            $table->string('std_writing_score');
-            $table->string('std_reading_score');
+
+            $table->string('std_total_ielts_lng_score')->nullable();
+            $table->string('std_ielts_listening_score')->nullable();
+            $table->string('std_ielts_speaking_score')->nullable();
+            $table->string('std_ielts_writing_score')->nullable();
+            $table->string('std_ielts_reading_score')->nullable();
+            $table->string('std_total_lng_score')->nullable();
+
             $table->string('std_edu_country');
             $table->string('std_edu_intitution_name');
             $table->string('std_edu_degree_name');

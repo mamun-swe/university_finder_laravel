@@ -38,11 +38,7 @@
                         <!-- Gender -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                @if($errors->has('std_gender'))
-                                    <small class="text-danger">Gender is required.</small>
-                                @else 
-                                    <small>Gender</small>
-                                @endif
+                                <small id="std_gender_msg"></small>
                                 <select name="std_gender" id="std_gender" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Gender</option>
                                     <option value="male">Male</option>
@@ -55,12 +51,7 @@
                         <!-- Blood Group -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                @if($errors->has('std_blood_grp'))
-                                    <small class="text-danger">Blood group is required.</small>
-                                @else 
-                                    <small>Blood Group</small>
-                                @endif
-                                
+                                <small id="std_blood_grp_msg"></small>
                                 <select name="std_blood_grp" id="std_blood_grp" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select blood group</option>
                                     <option value="a+">(A+)</option>
@@ -78,13 +69,8 @@
                         <!-- DOB -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                @if($errors->has('std_birth_date'))
-                                    <small class="text-danger">Date of birth is required.</small>
-                                @else 
-                                    <small>Date of birth</small>
-                                @endif
-                                
-                                <input type="date" name="std_birth_date" class="form-control rounded-0 shadow-none">
+                                <small id="std_dob_msg"></small>
+                                <input type="date" name="std_birth_date" id="std_birth_date" class="form-control rounded-0 shadow-none">
                             </div>
                         </div>
 
@@ -97,13 +83,8 @@
                         <!-- Country -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                @if($errors->has('std_country'))
-                                    <small class="text-danger">Country is required.</small>
-                                @else 
-                                    <small>Country</small>
-                                @endif
-                                
-                                <select name="std_country" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
+                                <small id="std_country_msg"></small>
+                                <select name="std_country" id="std_country" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Country</option>
                                     @foreach($countries as $country)
                                         <option value="{{$country->country_name}}">{{$country->country_name}}</option>
@@ -116,38 +97,24 @@
                          <!-- City -->
                          <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                @if($errors->has('std_city'))
-                                    <small class="text-danger">City is required.</small>
-                                @else 
-                                    <small>City</small>
-                                @endif
-                                
-                                <input type="text" name="std_city" class="form-control rounded-0 shadow-none" placeholder="Enter your city">
+                                <small id="std_city_msg"></small>
+                                <input type="text" name="std_city" id="std_city" class="form-control rounded-0 shadow-none" placeholder="Enter your city">
                             </div>
                         </div>
 
                         <!-- State -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                @if($errors->has('std_state'))
-                                    <small class="text-danger">State is required.</small>
-                                @else 
-                                    <small>State</small>
-                                @endif
-                                
-                                <input type="text" name="std_state" class="form-control rounded-0 shadow-none" placeholder="Enter your state">
+                                <small id="std_state_msg"></small>
+                                <input type="text" name="std_state" id="std_state" class="form-control rounded-0 shadow-none" placeholder="Enter your state">
                             </div>
                         </div>
 
                         <!-- Conatct -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                @if($errors->has('std_contact'))
-                                    <small class="text-danger">Contact is required.</small>
-                                @else 
-                                    <small>Contact</small>
-                                @endif
-                                <input type="number" name="std_contact" class="form-control rounded-0 shadow-none" placeholder="Enter your contact number">
+                                <small id="std_contact_msg"></small>
+                                <input type="number" name="std_contact" id="std_contact" class="form-control rounded-0 shadow-none" placeholder="Enter your contact number">
                             </div>
                         </div>
 
@@ -160,12 +127,7 @@
 
                         <div class="col-12">
                             <div class="form-group mb-4">
-                                @if($errors->has('std_language'))
-                                    <small class="text-danger">Select language .</small>
-                                @else 
-                                    <small>Select Language</small>
-                                @endif
-                                
+                                <small id="std_language_msg"></small>
                                 <select id="std_language" name="std_language" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Language</option>
                                     <option value="ielts">IELTS</option>
@@ -183,40 +145,40 @@
                         <!-- Total Score -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Total Score</small>
-                                <input type="number" min="1" name="std_total_lng_score" class="form-control rounded-0 shadow-none" placeholder="Enter total score">
+                                <small id="std_total_ielts_lng_score_msg"></small>
+                                <input type="number" min="1" name="std_total_ielts_lng_score" id="std_total_ielts_lng_score" class="form-control rounded-0 shadow-none" placeholder="Enter total score">
                             </div>
                         </div>
 
                         <!-- Listening Score -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Listening Score</small>
-                                <input type="number" min="1" name="std_listening_score" class="form-control rounded-0 shadow-none" placeholder="Enter listening score">
+                                <small id="std_ielts_listening_score_msg"></small>
+                                <input type="number" min="1" name="std_ielts_listening_score" id="std_ielts_listening_score" class="form-control rounded-0 shadow-none" placeholder="Enter listening score">
                             </div>
                         </div>
 
                         <!-- Speaking Score -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Speaking Score</small>
-                                <input type="number" min="1" name="std_speaking_score" class="form-control rounded-0 shadow-none" placeholder="Enter speaking score">
+                                <small id="std_ielts_speaking_score_msg"></small>
+                                <input type="number" min="1" name="std_ielts_speaking_score" id="std_ielts_speaking_score" class="form-control rounded-0 shadow-none" placeholder="Enter speaking score">
                             </div>
                         </div>
 
                         <!-- Writing Score -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Writing Score</small>
-                                <input type="number" min="1" name="std_writing_score" class="form-control rounded-0 shadow-none" placeholder="Enter writing score">
+                                <small id="std_ielts_writing_score_msg"></small>
+                                <input type="number" min="1" name="std_ielts_writing_score" id="std_ielts_writing_score" class="form-control rounded-0 shadow-none" placeholder="Enter writing score">
                             </div>
                         </div>
 
                         <!-- Reading Score -->
                         <div class="col-12">
                             <div class="form-group mb-4">
-                                <small>Reading Score</small>
-                                <input type="number" min="1" name="std_reading_score" class="form-control rounded-0 shadow-none" placeholder="Enter reading score">
+                                <small id="std_ielts_reading_score_msg"></small>
+                                <input type="number" min="1" name="std_ielts_reading_score" id="std_ielts_reading_score" class="form-control rounded-0 shadow-none" placeholder="Enter reading score">
                             </div>
                         </div>
                     </div>
@@ -225,8 +187,8 @@
                     <div class="row other_score">
                         <div class="col-12">
                             <div class="form-group mb-4">
-                                <small>Total Score</small>
-                                <input type="number" min="1" name="std_total_lng_score" class="form-control rounded-0 shadow-none" placeholder="Enter total score" >
+                                <small id="std_total_lng_score_msg"></small>
+                                <input type="number" min="1" name="std_total_lng_score" id="std_total_lng_score" class="form-control rounded-0 shadow-none" placeholder="Enter total score" >
                             </div>
                         </div>
                     </div>
@@ -242,8 +204,8 @@
                         <!-- Country -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Country</small>
-                                <select name="std_edu_country" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
+                                <small id="std_edu_country_msg"></small>
+                                <select name="std_edu_country" id="std_edu_country" class="form-control rounded-0 shadow-none select2" style="width: 100%;">
                                     <option value="" selected>Select Country</option>
                                     @foreach($countries as $country)
                                         <option value="{{$country->country_name}}">{{$country->country_name}}</option>
@@ -255,56 +217,56 @@
                         <!-- Institution -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Institution</small>
-                                <input type="text" name="std_edu_intitution_name" class="form-control rounded-0 shadow-none" placeholder="Enter institution name">
+                                <small id="std_edu_intitution_name_msg"></small>
+                                <input type="text" name="std_edu_intitution_name" id="std_edu_intitution_name" class="form-control rounded-0 shadow-none" placeholder="Enter institution name">
                             </div>
                         </div>
 
                         <!-- Degree Name -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Degree</small>
-                                <input type="text" name="std_edu_degree_name" class="form-control rounded-0 shadow-none" placeholder="Enter degree name">
+                                <small id="std_edu_degree_name_msg"></small>
+                                <input type="text" name="std_edu_degree_name" id="std_edu_degree_name" class="form-control rounded-0 shadow-none" placeholder="Enter degree name">
                             </div>
                         </div>
 
                         <!-- Subject -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Subject</small>
-                                <input type="text" name="std_edu_subject_name" class="form-control rounded-0 shadow-none" placeholder="Enter subject name">
+                                <small id="std_edu_subject_name_msg"></small>
+                                <input type="text" name="std_edu_subject_name" id="std_edu_subject_name" class="form-control rounded-0 shadow-none" placeholder="Enter subject name">
                             </div>
                         </div>
 
                         <!-- Start date -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Start date</small>
-                                <input type="date" name="std_edu_start_date" class="form-control rounded-0 shadow-none">
+                                <small id="std_edu_start_date_msg"></small>
+                                <input type="date" name="std_edu_start_date" id="std_edu_start_date" class="form-control rounded-0 shadow-none">
                             </div>
                         </div>
 
                         <!-- End date -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>End date</small>
-                                <input type="date" name="std_edu_end_date" class="form-control rounded-0 shadow-none">
+                                <small id="std_edu_end_date_msg"></small>
+                                <input type="date" name="std_edu_end_date" id="std_edu_end_date" class="form-control rounded-0 shadow-none">
                             </div>
                         </div>
 
                         <!-- Study duration -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Study Duration</small>
-                                <input type="number" min="1" max="6" name="std_study_duration" class="form-control rounded-0 shadow-none" placeholder="Enter study duration">
+                                <small id="std_study_duration_msg"></small>
+                                <input type="number" min="1" max="6" name="std_study_duration" id="std_study_duration" class="form-control rounded-0 shadow-none" placeholder="Enter study duration">
                             </div>
                         </div>
 
                         <!-- CGPA Scale -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>CGPA Scale</small>
-                                <input type="number" min="1" name="std_cgpa_scale" class="form-control rounded-0 shadow-none" placeholder="Enter CGPA scale">
+                                <small id="std_cgpa_scale_msg"></small>
+                                <input type="number" min="1" name="std_cgpa_scale" id="std_cgpa_scale" class="form-control rounded-0 shadow-none" placeholder="Enter CGPA scale">
                             </div>
                         </div>
 
@@ -312,8 +274,8 @@
 
                         <div class="col-12">
                             <div class="form-group mb-4">
-                                <small>CGPA</small>
-                                <input type="number" min="1" max="4" name="std_cgpa" class="form-control rounded-0 shadow-none" placeholder="Enter CGPA" >
+                                <small id="std_cgpa_msg">CGPA</small>
+                                <input type="text" min="1" max="4" name="std_cgpa" id="std_cgpa" class="form-control rounded-0 shadow-none" placeholder="Enter CGPA" >
                             </div>
                         </div>
                     </div>
@@ -328,40 +290,40 @@
                         <!-- Faculty name -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Faculty name</small>
-                                <input type="text" name="ref_faq_name" class="form-control rounded-0 shadow-none" placeholder="Enter faculty name">
+                                <small id="ref_faq_name_msg"></small>
+                                <input type="text" name="ref_faq_name" id="ref_faq_name" class="form-control rounded-0 shadow-none" placeholder="Enter faculty name">
                             </div>
                         </div>
 
                         <!-- Faculty contact -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Faculty contact no.</small>
-                                <input type="number" name="ref_faq_contact" class="form-control rounded-0 shadow-none" placeholder="Enter contact no.">
+                                <small id="ref_faq_contact_msg"></small>
+                                <input type="number" name="ref_faq_contact" id="ref_faq_contact" class="form-control rounded-0 shadow-none" placeholder="Enter contact no.">
                             </div>
                         </div>
 
                          <!-- Faculty email -->
                          <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Faculty e-mail</small>
-                                <input type="text" name="ref_faq_email" class="form-control rounded-0 shadow-none" placeholder="Enter e-mail">
+                                <small id="ref_faq_email_msg"></small>
+                                <input type="text" name="ref_faq_email" id="ref_faq_email" class="form-control rounded-0 shadow-none" placeholder="Enter e-mail">
                             </div>
                         </div>
 
                         <!-- Faculty profession -->
                         <div class="col-12 col-lg-6">
                             <div class="form-group mb-4">
-                                <small>Faculty profession</small>
-                                <input type="text" name="ref_faq_profession" class="form-control rounded-0 shadow-none" placeholder="Enter profession">
+                                <small id="ref_faq_profession_msg"></small>
+                                <input type="text" name="ref_faq_profession" id="ref_faq_profession" class="form-control rounded-0 shadow-none" placeholder="Enter profession">
                             </div>
                         </div>
 
                          <!-- Faculty institution -->
                          <div class="col-12">
                             <div class="form-group">
-                                <small>Faculty institution</small>
-                                <input type="text" name="ref_faq_institution" class="form-control rounded-0 shadow-none" placeholder="Enter institution">
+                                <small id="ref_faq_institution_msg"></small>
+                                <input type="text" name="ref_faq_institution" id="ref_faq_institution" class="form-control rounded-0 shadow-none" placeholder="Enter institution">
                             </div>
                         </div>
 
@@ -445,6 +407,41 @@ $('#std_language').change(function(){
     }
 })
 
+
+$("#std_gender_msg").html("Gender")
+$("#std_blood_grp_msg").html("Blood group")
+$("#std_dob_msg").html("Date of birth")
+$("#std_country_msg").html("Country")
+$("#std_city_msg").html("City")
+$("#std_state_msg").html("State")
+$("#std_contact_msg").html("Contact")
+$("#std_language_msg").html("Select language")
+
+$("#std_total_ielts_lng_score_msg").html("Total Score")
+$("#std_ielts_listening_score_msg").html("Listening Score")
+$("#std_ielts_speaking_score_msg").html("Speaking Score")
+$("#std_ielts_writing_score_msg").html("Writing Score")
+$("#std_ielts_reading_score_msg").html("Reading Score")
+
+$("#std_total_lng_score_msg").html("Total Score")
+
+$("#std_edu_country_msg").html("Country")
+$("#std_edu_intitution_name_msg").html("Institution")
+$("#std_edu_degree_name_msg").html("Degree")
+$("#std_edu_subject_name_msg").html("Subject")
+$("#std_edu_start_date_msg").html("Start date")
+$("#std_edu_end_date_msg").html("End date")
+$("#std_study_duration_msg").html("Study Duration")
+$("#std_cgpa_scale_msg").html("CGPA Scale")
+$("#std_cgpa_msg").html("CGPA")
+
+$("#ref_faq_name_msg").html("Faculty name")
+$("#ref_faq_contact_msg").html("Faculty contact no.")
+$("#ref_faq_email_msg").html("Faculty e-mail")
+$("#ref_faq_profession_msg").html("Faculty profession")
+$("#ref_faq_institution_msg").html("Faculty institution")
+
+
 // Form Submission
 $("#submit_form").submit(function(event){
     event.preventDefault()
@@ -452,9 +449,204 @@ $("#submit_form").submit(function(event){
     var data = {
         std_gender: $("#std_gender").val(),
         std_blood_grp: $("#std_blood_grp").val(),
+        std_birth_date: $("#std_birth_date").val(),
+        std_country: $("#std_country").val(),
+        std_city: $("#std_city").val(),
+        std_state: $("#std_state").val(),
+        std_contact: $("#std_contact").val(),
+
+        std_language: $("#std_language").val(),
+
+        std_total_ielts_lng_score: $("#std_total_ielts_lng_score").val(),
+        std_ielts_listening_score: $("#std_ielts_listening_score").val(),
+        std_ielts_speaking_score: $("#std_ielts_speaking_score").val(),
+        std_ielts_writing_score: $("#std_ielts_writing_score").val(),
+        std_ielts_reading_score: $("#std_ielts_reading_score").val(),
+
+        std_total_lng_score: $("#std_total_lng_score").val(),
+
+        std_edu_country: $("#std_edu_country").val(),
+        std_edu_intitution_name: $("#std_edu_intitution_name").val(),
+        std_edu_degree_name: $("#std_edu_degree_name").val(),
+        std_edu_subject_name: $("#std_edu_subject_name").val(),
+        std_edu_start_date: $("#std_edu_start_date").val(),
+        std_edu_end_date: $("#std_edu_end_date").val(),
+        std_study_duration: $("#std_study_duration").val(),
+        std_cgpa_scale: $("#std_cgpa_scale").val(),
+        std_cgpa: $("#std_cgpa").val(),
+
+        ref_faq_name: $("#ref_faq_name").val(),
+        ref_faq_contact: $("#ref_faq_contact").val(),
+        ref_faq_email: $("#ref_faq_email").val(),
+        ref_faq_profession: $("#ref_faq_profession").val(),
+        ref_faq_institution: $("#ref_faq_institution").val(),
     }
 
-    console.log(data)
+    if(!data.std_gender){
+        $("#std_gender_msg").html("Gender is required").css("color", "brown")
+    }
+
+    if(!data.std_blood_grp){
+        $("#std_blood_grp_msg").html("Blood group is required").css("color", "brown")
+    }
+
+    if(!data.std_birth_date){
+        $("#std_dob_msg").html("Date of birth is required").css("color", "brown")
+    }
+
+    if(!data.std_country){
+        $("#std_country_msg").html("Country is required").css("color", "brown")
+    }
+
+    if(!data.std_city){
+        $("#std_city_msg").html("City is required").css("color", "brown")
+    }
+
+    if(!data.std_city){
+        $("#std_city_msg").html("City is required").css("color", "brown")
+    }
+
+    if(!data.std_state){
+        $("#std_state_msg").html("State is required").css("color", "brown")
+    }
+
+    if(!data.std_contact){
+        $("#std_contact_msg").html("Contact is required").css("color", "brown")
+    }
+
+    if(!data.std_language){
+        $("#std_language_msg").html("Language is required").css("color", "brown")
+    }
+
+    // IELTS data validation
+    if(data.std_language == "ielts"){
+        if(!data.std_total_ielts_lng_score){
+            $("#std_total_ielts_lng_score_msg").html("Total Score is required").css("color", "brown")
+        }
+
+        if(!data.std_ielts_listening_score){
+            $("#std_ielts_listening_score_msg").html("Listening Score is required").css("color", "brown")
+        }
+
+        if(!data.std_ielts_speaking_score){
+            $("#std_ielts_speaking_score_msg").html("Speaking Score is required").css("color", "brown")
+        }
+
+        if(!data.std_ielts_writing_score){
+            $("#std_ielts_writing_score_msg").html("Writing Score is required").css("color", "brown")
+        }
+
+        if(!data.std_ielts_reading_score){
+            $("#std_ielts_reading_score_msg").html("Reading Score is required").css("color", "brown")
+        }
+    }
+    
+    if(data.std_language != "ielts"){
+        if(data.std_language && !data.std_total_lng_score){
+            $("#std_total_lng_score_msg").html("Total score is required").css("color", "brown")
+        }
+    }
+
+    if(!data.std_edu_country){
+        $("#std_edu_country_msg").html("Country is required").css("color", "brown")
+    }
+
+    if(!data.std_edu_intitution_name){
+        $("#std_edu_intitution_name_msg").html("Institution is required").css("color", "brown")
+    }
+
+    if(!data.std_edu_intitution_name){
+        $("#std_edu_degree_name_msg").html("Degree is required").css("color", "brown")
+    }
+
+    if(!data.std_edu_subject_name){
+        $("#std_edu_subject_name_msg").html("Subject is required").css("color", "brown")
+    }
+
+    if(!data.std_edu_start_date){
+        $("#std_edu_start_date_msg").html("Start date is required").css("color", "brown")
+    }
+
+    if(!data.std_edu_end_date){
+        $("#std_edu_end_date_msg").html("End date is required").css("color", "brown")
+    }
+
+    if(!data.std_study_duration){
+        $("#std_study_duration_msg").html("Study Duration is required").css("color", "brown")
+    }
+
+    if(!data.std_cgpa_scale){
+        $("#std_cgpa_scale_msg").html("CGPA Scale is required").css("color", "brown")
+    }
+
+    if(!data.std_cgpa){
+        $("#std_cgpa_msg").html("CGPA is required").css("color", "brown")
+    }
+
+    if(!data.ref_faq_name){
+        $("#ref_faq_name_msg").html("Faculty name is required").css("color", "brown")
+    }
+
+    if(!data.ref_faq_contact){
+        $("#ref_faq_contact_msg").html("Faculty contact is required").css("color", "brown")
+    }
+
+    if(!data.ref_faq_email){
+        $("#ref_faq_email_msg").html("Faculty e-mail is required").css("color", "brown")
+    }
+
+    if(!data.ref_faq_profession){
+        $("#ref_faq_profession_msg").html("Faculty profession is required").css("color", "brown")
+    }
+
+    if(!data.ref_faq_institution){
+        $("#ref_faq_institution_msg").html("Faculty institution is required").css("color", "brown")
+    }
+
+    if(
+        data.std_gender && 
+        data.std_blood_grp && 
+        data.std_birth_date && 
+        data.std_country && 
+        data.std_city && 
+        data.std_state && 
+        data.std_contact && 
+        data.std_language && 
+        
+        data.std_edu_country && 
+        data.std_edu_intitution_name && 
+        data.std_edu_degree_name && 
+        data.std_edu_subject_name && 
+        data.std_edu_start_date && 
+        data.std_edu_end_date && 
+        data.std_study_duration && 
+        data.std_cgpa_scale && 
+        data.std_cgpa && 
+        data.ref_faq_name && 
+        data.ref_faq_contact && 
+        data.ref_faq_email && 
+        data.ref_faq_profession && 
+        data.ref_faq_institution
+        ){
+
+            $.ajax({
+                headers: {
+                    'X-CSRF-TOKEN': '{{csrf_token()}}'
+                },
+                type : 'POST',
+                url:"{{route('account.update')}}",
+                data: data,
+                success : function(response) {
+                    console.log(response)
+                    if(response == 'success'){
+                        window.location.reload();
+                    }
+                }
+            })
+    }
+
 })
+
+        
 </script>
 @endsection
