@@ -68,7 +68,7 @@
 				@foreach($universities as $university)
 				<div class="col-lg-4 course_col">
 					<div class="course">
-						<div class="course_image"><img src="{{url('')}}/university_images/{{$university->image}}" alt=""></div>
+						<div class="course_image"><img src="{{url('')}}/university_images/{{$university->image}}" class="img-fluid w-100" alt=""></div>
 						<div class="course_body">
 							<div class="course_title"><h4 class="mb-0"><a target="_blank" href="{{$university->website_link}}">{{$university->university_name}}</a></h4></div>
 							<p class="text-muted mb-0">World Ranking {{$university->university_ranking}}</p>

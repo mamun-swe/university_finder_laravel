@@ -10,7 +10,9 @@
                 @if(!$userProfile)
                     <p>Update your profile with your information .</p>
                 @else
-                    <p>100 universities are mathcing with your profile .</p>
+                    @if(count($matchUni) > 0)
+                        <p>{{count($matchUni)}} universities are mathcing with your profile .</p>
+                    @endif
                 @endif
             </div>
 
@@ -339,47 +341,51 @@
             @else
             <!-- Matching Universities -->
                 <div class="col-12">
-                    <div class="accordion" id="accordionExample">
-                        
-                        <div class="card">
-                            <div class="card-header" id="headingOne">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link btn-block" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <h5>daffodil international university, Dhaka</h5>
-                                </button>
-                            </h2>
-                            </div>
 
-                            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-                            <div class="card-body">
-                                <p>
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                </p>
-                            </div>
+                    @if(count($matchUni) > 0)
+                        <div class="accordion mb-4" id="accordionExample">
+                            <div class="panel-group" id="posts">  
+
+                                @foreach($matchUni as $university)
+                                <div class="panel panel-default card">  
+                                    <div class="panel-heading card-header">  
+                                        <h5 class="panel-title mb-0">  
+                                            <a href="#<?php echo $university->id; ?>" data-toggle="collapse" data-parent="#posts">{{$university->university_name}}</a>  
+                                        </h5>  
+                                    </div>  
+                                    <div id="<?php echo $university->id; ?>" class="panel-collapse collapse">  
+                                        <div class="panel-body card-body p-2 p-lg-3">  
+                                            <p class="text-dark"><b>Applicant requirements</b></p>
+                                            <ul>
+                                                <li><p><span class="mr-2">World Ranking: </span>{{$university->university_ranking}}</p></li>
+                                                <li><p><span class="mr-2">IELTS Score: </span>{{$university->ielts_score}}</p></li>
+                                                <li><p><span class="mr-2">GRE Score: </span>{{$university->gre_score}}</p></li>
+                                                <li><p><span class="mr-2">TOFEL Score: </span>{{$university->tofel_score}}</p></li>
+                                                <li><p><span class="mr-2">PTE Score: </span>{{$university->pte_score}}</p></li>
+                                                <li><p><span class="mr-2">Bachelor CGPA: </span>{{$university->bachelor_cgpa}}</p></li>
+                                                <li><p><span class="mr-2 text-capitalize">Address: </span>{{$university->address}}</p></li>
+                                                <li>
+                                                    <p>
+                                                        <span class="mr-2 text-dark"><b>Visit website to apply:</b> </span>
+                                                        <a href="{{$university->website_link}}" target="_blank">{{$university->website_link}}</a>
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>  
+                                    </div>  
+                                </div> 
+                                @endforeach
+
                             </div>
                         </div>
-
-                        
-                        <div class="card">
-                            <div class="card-header" id="headingTwo">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <h5>daffodil international university, dhaka</h5>
-                                </button>
-                            </h2>
-                            </div>
-                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-                            <div class="card-body">
-                                <p>
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                </p>
-                            </div>
-                            </div>
+                        {{ $matchUni->links() }}
+                    @else
+                        <div class="text-center">
+                            <h4 class="text-danger">Any university doesn't matching with your profile.</h4>
                         </div>
+                    @endif
 
-                        
                     
-                    </div>
                 </div>
             @endif
 

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use App\Models\Country;
+use App\Models\University;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +26,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('admin.home');
+        $admin = User::where('role', '=', 'admin')->count();
+        $user = User::where('role', '=', 'user')->count();
+        $country = Country::count();
+        $university = University::count();
+        return view('admin.home', compact('admin', 'user', 'country', 'university'));
     }
 }

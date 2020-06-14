@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Account;
 
 use App\Models\Country;
 use App\Models\UserProfile;
+use App\Models\University;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,32 @@ class AccountController extends Controller
     public function index(){
         $countries = Country::all();
         $userProfile = UserProfile::where('user_id', '=', Auth()->User()->id)->first();
-        return view('website.account.index', compact('countries','userProfile'));
+        if($userProfile){
+            if($userProfile->std_language = 'ielts'){
+                $matchUni = University::where('ielts_score', '<=', $userProfile->std_total_ielts_lng_score)
+                        ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
+                        ->paginate(20);
+                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
+            }elseif($userProfile->std_language = 'gre'){
+                $matchUni = University::where('gre_score', '<=', $userProfile->std_total_lng_score)
+                        ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
+                        ->paginate(20);
+                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
+            }elseif($userProfile->std_language = 'tofel'){
+                $matchUni = University::where('tofel_score', '<=', $userProfile->std_total_lng_score)
+                        ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
+                        ->paginate(20);
+                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
+            }elseif($userProfile->std_language = 'pte'){
+                $matchUni = University::where('pte_score', '<=', $userProfile->std_total_lng_score)
+                        ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
+                        ->paginate(20);
+                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
+            }else{
+                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
+            }
+        }
+        
     }
 
 

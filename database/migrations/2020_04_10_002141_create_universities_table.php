@@ -17,11 +17,12 @@ class CreateUniversitiesTable extends Migration
             $table->id();
             $table->bigInteger('country');
             $table->string('university_name');
-            $table->bigInteger('university_ranking');
-            $table->bigInteger('ielts_score');
-            $table->bigInteger('gre_score');
-            $table->bigInteger('tofel_score');
-            $table->bigInteger('bachelor_cgpa');
+            $table->string('university_ranking');
+            $table->string('ielts_score');
+            $table->string('gre_score');
+            $table->string('tofel_score');
+            $table->string('pte_score');
+            $table->string('bachelor_cgpa');
             $table->string('address');
             $table->text('website_link');
             $table->string('image');

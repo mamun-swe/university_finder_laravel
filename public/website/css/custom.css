@@ -121,18 +121,17 @@
     border-bottom: 1px solid #2e21df42;
 }
 
-.account-index .accordion .card .btn {
+.account-index .accordion .card .card-header a {
     display: block !important;
     width: 100%;
-    color: #000;
+    color: #2e21df;
     background: none;
     text-align: left;
-    padding: 20px;
     cursor: pointer;
     text-decoration: none;
 }
 
-.account-index .accordion .card .btn h5 {
+.account-index .accordion .card .card-header h5 {
     margin-bottom: 0;
     text-transform: capitalize;
     text-decoration: none;
@@ -142,6 +141,31 @@
     margin-bottom: 0;
 }
 
-.danger{
+.account-index .accordion .card .card-body a {
+    padding: 0;
+    background-color: none;
+}
+
+.account-index .accordion .card .card-body a:hover {
+    background: none;
+    color: #000;
+}
+
+.danger {
     color: brown;
+}
+
+@media(max-width: 992px) {
+    .account-index .accordion .card a {
+        padding: 10px;
+    }
+}
+
+@media(min-width: 992px) {
+    .account-index .accordion .card a {
+        padding: 15px;
+    }
+    .account-index .accordion .card .card-body p {
+        font-size: 14px;
+    }
 }

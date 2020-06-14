@@ -94,13 +94,25 @@
                                 </div>
                             </div>
 
-                            <div class="col-12">
+                            <div class="col-12 col-lg-6">
+                                <!-- PTE Score -->
+                                <div class="form-group mb-3">
+                                    @if($errors->has('pte_score'))
+                                        <small class="text-danger">{{ $errors->first('pte_score') }}</small>
+                                    @else 
+                                        <small class="text-muted"><b>PTE Score</b></small>
+                                    @endif
+                                    <input type="text" class="form-control rounded-0 shadow-none" name="pte_score" placeholder="Enter PTE Score" min="1">
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-lg-6">
                                 <!-- Bachelor CGPA -->
                                 <div class="form-group mb-3">
                                     @if($errors->has('bachelor_cgpa'))
                                         <small class="text-danger">{{ $errors->first('bachelor_cgpa') }}</small>
                                     @else 
-                                        <small class="text-muted"><b>TOFEL Score</b></small>
+                                        <small class="text-muted"><b>Bachelor CGPA</b></small>
                                     @endif
                                     <input type="text" class="form-control rounded-0 shadow-none" name="bachelor_cgpa" placeholder="Enter Bachelor CGPA" min="1">
                                 </div>
