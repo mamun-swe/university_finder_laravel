@@ -44,7 +44,8 @@
                                     {{ __('Login') }}
                                 </button>
                                 <div class="text-right pt-2">
-                                <p>Have no account ? <a href="{{route('register')}}"> Register.</a></p>
+                                    <p class="mb-0">Have no account ? <a href="{{route('register')}}"> Register.</a></p>
+                                    <p>Forgot password? <a href="{{route('register')}}"> Reset now.</a></p>
                                 </div>
                             </div>
                         </div>

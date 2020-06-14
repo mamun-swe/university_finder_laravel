@@ -91,12 +91,13 @@
                                         <li><a href="{{route('website.contact')}}">Contact</a></li>
 
                                         @if(Auth::User())
+                                        <li><a href="" class="text-capitalize">Profile</a></li>
                                         <li>
-                                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">Logout</a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
+                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                document.getElementById('logout-form').submit();">Logout</a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                @csrf
+                                            </form>
                                         </li>
                                         @endif
                                     </ul>
@@ -127,7 +128,15 @@
                     <li class="menu_mm"><a href="{{route('website.university.list')}}">University</a></li>
                     <li class="menu_mm"><a href="{{route('website.guildeline')}}">Guildeline</a></li>
                     <li class="menu_mm"><a href="{{route('website.contact')}}">Contact</a></li>
-                    <li class="menu_mm"><a href="#">Logout</a></li>
+                    @if(Auth::User())
+                        <li class="menu_mm"><a href="" class="text-capitalize">PROFILE</a></li>
+                        <li class="menu_mm">
+                            <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                        </li>
+                    @endif
                 </ul>
             </nav>
             <div class="menu_extra">
@@ -161,7 +170,9 @@
 					<!-- Newsletter -->
 					<div class="col-lg-3 footer_col">
 						<div class="newsletter_container d-flex flex-column align-items-start justify-content-end">
-							<div class="footer_logo mb-auto"><a href="#">Lingua</a></div>
+                            <a href="{{route('website.home')}}">
+                                <div class="footer_logo mb-auto"><a href="#">UVPicker</a></div>
+                            </a>
 							<div class="footer_title mb-3">Description</div>
 							<p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio iure ullam tempore atque. Provident cumque blanditiis atque iusto labore! Molestias!</p>
 						</div>
@@ -172,13 +183,8 @@
 						<div>
 							<div class="footer_title">About Us</div>
 							<ul class="footer_list">
-								<li><a href="#">Courses</a></li>
-								<li><a href="#">Team</a></li>
-								<li><a href="#">Brand Guidelines</a></li>
-								<li><a href="#">Jobs</a></li>
-								<li><a href="#">Advertise with us</a></li>
-								<li><a href="#">Press</a></li>
-								<li><a href="#">Contact us</a></li>
+                                <li><a href="{{route('website.home')}}">Home</a></li>
+                                <li><a href="{{route('website.university.list')}}">University</a></li>
 							</ul>
 						</div>
 					</div>
@@ -187,12 +193,8 @@
 					<div class="col-lg-2 footer_col">
 						<div class="footer_title">Help & Support</div>
 						<ul class="footer_list">
-							<li><a href="#">Discussions</a></li>
-							<li><a href="#">Troubleshooting</a></li>
-							<li><a href="#">Duolingo FAQs</a></li>
-							<li><a href="#">Schools FAQs</a></li>
-							<li><a href="#">Duolingo English Test FAQs</a></li>
-							<li><a href="#">Status</a></li>
+                            <li><a href="{{route('website.guildeline')}}">Guildeline</a></li>
+                            <li><a href="{{route('website.contact')}}">Contact us</a></li>
 						</ul>
 					</div>
 
@@ -201,10 +203,7 @@
 						<div>
 							<div class="footer_title">Privacy & Terms</div>
 							<ul class="footer_list">
-								<li><a href="#">Community Guidelines</a></li>
-								<li><a href="#">Terms</a></li>
-								<li><a href="#">Brand Guidelines</a></li>
-								<li><a href="#">Privacy</a></li>
+								<li><a href="{{route('website.privacy')}}">Privacy</a></li>
 							</ul>
 						</div>
 					</div>

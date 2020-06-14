@@ -31,6 +31,7 @@ Route::get('/', 'WebsiteController@index')->name('website.home');
 Route::get('/university-list', 'WebsiteController@university')->name('website.university.list');
 Route::get('/guildeline', 'WebsiteController@guildeline')->name('website.guildeline');
 Route::get('/contact', 'WebsiteController@contact')->name('website.contact');
+Route::get('/privacy', 'WebsiteController@privacy')->name('website.privacy');
 
 
 // User Account

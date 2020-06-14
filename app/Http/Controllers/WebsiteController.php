@@ -29,4 +29,9 @@ class WebsiteController extends Controller
     public function contact(){
         return view('website.contact');
     }
+
+
+    public function privacy(){
+        return view('website.privacy');
+    }
 }
