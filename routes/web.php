@@ -36,5 +36,6 @@ Route::get('/privacy', 'WebsiteController@privacy')->name('website.privacy');
 
 // User Account
 Route::get('/account', 'Account\AccountController@index')->name('account.index')->middleware(['auth', 'User']);
+Route::get('/account/profile', 'Account\AccountController@accountView')->name('account.profile')->middleware(['auth', 'User']);
 Route::post('/account/update', 'Account\AccountController@updateAccount')->name('account.update')->middleware(['auth', 'User']);
 

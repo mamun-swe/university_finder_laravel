@@ -91,7 +91,7 @@
                                         <li><a href="{{route('website.contact')}}">Contact</a></li>
 
                                         @if(Auth::User())
-                                        <li><a href="" class="text-capitalize">Profile</a></li>
+                                        <li><a href="{{route('account.profile')}}" class="text-capitalize">Profile</a></li>
                                         <li>
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">Logout</a>
@@ -129,7 +129,7 @@
                     <li class="menu_mm"><a href="{{route('website.guildeline')}}">Guildeline</a></li>
                     <li class="menu_mm"><a href="{{route('website.contact')}}">Contact</a></li>
                     @if(Auth::User())
-                        <li class="menu_mm"><a href="" class="text-capitalize">PROFILE</a></li>
+                        <li class="menu_mm"><a href="{{route('account.profile')}}" class="text-capitalize">PROFILE</a></li>
                         <li class="menu_mm">
                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

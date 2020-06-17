@@ -14,36 +14,48 @@ class AccountController extends Controller
         $countries = Country::all();
         $userProfile = UserProfile::where('user_id', '=', Auth()->User()->id)->first();
         if($userProfile){
-            if($userProfile->std_language = 'ielts'){
+            
+            if($userProfile->std_language == 'ielts'){
                 $matchUni = University::where('ielts_score', '<=', $userProfile->std_total_ielts_lng_score)
                         ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
                         ->paginate(20);
-                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
-            }elseif($userProfile->std_language = 'gre'){
+                    return view('website.account.index', compact('matchUni'));
+            }
+
+            if($userProfile->std_language == 'gre'){
                 $matchUni = University::where('gre_score', '<=', $userProfile->std_total_lng_score)
-                        ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
-                        ->paginate(20);
-                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
-            }elseif($userProfile->std_language = 'tofel'){
+                            ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
+                            ->paginate(20);
+                    return view('website.account.index', compact('matchUni'));
+            }
+            
+            if($userProfile->std_language == 'tofel'){
                 $matchUni = University::where('tofel_score', '<=', $userProfile->std_total_lng_score)
                         ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
                         ->paginate(20);
-                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
-            }elseif($userProfile->std_language = 'pte'){
+                return view('website.account.index', compact('matchUni'));
+            }
+            
+            if($userProfile->std_language == 'pte'){
                 $matchUni = University::where('pte_score', '<=', $userProfile->std_total_lng_score)
                         ->where('bachelor_cgpa', '<=', $userProfile->std_cgpa)
                         ->paginate(20);
-                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
-            }else{
-                return view('website.account.index', compact('countries','userProfile', 'matchUni'));
+                return view('website.account.index', compact('matchUni'));
             }
+           
+        }else{
+            return view('website.account.profile', compact('countries'));
         }
         
     }
 
+    public function accountView(){
+        $countries = Country::all();
+        return view('website.account.profile', compact('countries'));
+    }
+
 
     public function updateAccount(Request $request){
-
 
         UserProfile::create([
             'user_id' => Auth()->User()->id,
