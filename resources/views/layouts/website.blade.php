@@ -50,14 +50,14 @@
                         <div class="row">
                             <div class="col">
                                 <div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
-                                    <div class="top_bar_phone"><span class="top_bar_title">phone:</span>+44 300 303 0266</div>
+                                    <div class="top_bar_phone"><span class="top_bar_title">phone:</span>+88 0164 4341 080</div>
                                     <div class="top_bar_right ml-auto">
     
                                         <!-- Social -->
                                         <div class="top_bar_social">
                                             <span class="top_bar_title social_title">follow us</span>
                                             <ul>
-                                                <li><a href="#"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                                <li><a href="https://www.facebook.com/likhonkhan162" target="_blank"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
                                                 <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                                 <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
                                             </ul>
@@ -144,7 +144,7 @@
                 <div class="menu_social">
                     <span class="menu_title">follow us</span>
                     <ul>
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.facebook.com/likhonkhan162" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
                     </ul>
@@ -168,45 +168,48 @@
 				<div class="row">
 
 					<!-- Newsletter -->
-					<div class="col-lg-3 footer_col">
+					<div class="col-lg-7 footer_col pr-lg-5">
 						<div class="newsletter_container d-flex flex-column align-items-start justify-content-end">
                             <a href="{{route('website.home')}}">
                                 <div class="footer_logo mb-auto"><a href="#">UVPicker</a></div>
                             </a>
 							<div class="footer_title mb-3">Description</div>
-							<p class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio iure ullam tempore atque. Provident cumque blanditiis atque iusto labore! Molestias!</p>
+							<p class="text-white">When a student enter this website then he can show firstly home page.After you can choose any option when you view other catagory.Like as University  Guidline, contact etc.First of all a student very important for her registration in this website.After registration he can fulfill her all personal requirements then he/she can choose preferring subject and University.If any query he/she contact us by phone or email or message.</p>
 						</div>
 					</div>
 
 					<!-- About -->
-					<div class="col-lg-2 offset-lg-3 footer_col">
+					<div class="col-lg-5 pl-lg-5">
 						<div>
 							<div class="footer_title">About Us</div>
 							<ul class="footer_list">
                                 <li><a href="{{route('website.home')}}">Home</a></li>
                                 <li><a href="{{route('website.university.list')}}">University</a></li>
+                                <li><a href="{{route('website.guildeline')}}">Guildeline</a></li>
+                            <li><a href="{{route('website.contact')}}">Contact us</a></li>
+                            <li><a href="{{route('website.privacy')}}">Privacy</a></li>
 							</ul>
 						</div>
 					</div>
 
 					<!-- Help & Support -->
-					<div class="col-lg-2 footer_col">
+					<!-- <div class="col-lg-2 footer_col">
 						<div class="footer_title">Help & Support</div>
 						<ul class="footer_list">
                             <li><a href="{{route('website.guildeline')}}">Guildeline</a></li>
                             <li><a href="{{route('website.contact')}}">Contact us</a></li>
 						</ul>
-					</div>
+					</div> -->
 
 					<!-- Privacy -->
-					<div class="col-lg-2 footer_col clearfix">
+					<!-- <div class="col-lg-3 footer_col clearfix">
 						<div>
 							<div class="footer_title">Privacy & Terms</div>
 							<ul class="footer_list">
-								<li><a href="{{route('website.privacy')}}">Privacy</a></li>
+								
 							</ul>
 						</div>
-					</div>
+					</div> -->
 
 				</div>
 			</div>

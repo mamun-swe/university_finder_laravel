@@ -169,3 +169,13 @@
         font-size: 14px;
     }
 }
+
+.home .course_image {
+    width: 100%;
+    max-height: 200px;
+}
+
+.university_list .course_image {
+    width: 100%;
+    max-height: 200px;
+}
