@@ -1,0 +1,3 @@
+db: rabidh6_uvpicker
+pass: B+x&Kl]rB@mO
+user: rabidh6_uvpicker
